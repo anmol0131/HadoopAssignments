@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    //Adding Hadoop Dependencies
+    implementation group: "org.apache.hadoop", name: "hadoop-common", version: "3.3.0"
+    implementation group: "org.apache.hadoop", name: "hadoop-client", version: "3.3.0"
+    implementation group: "org.apache.hadoop", name: "hadoop-hdfs", version: "3.3.0"
+
+
+    //Adding HBase dependencies
+    implementation group: "org.apache.hbase", name: "hbase-common", version: "2.2.3"
+    implementation group: "org.apache.hbase", name: "hbase-client", version: "2.2.3"
+    implementation group: "org.apache.hbase", name: "hbase-server", version: "2.2.3"
+    implementation group: "org.apache.hbase", name: "hbase-mapreduce", version: "2.2.3"
+    implementation 'org.apache.hadoop:hadoop-mapreduce-client-common:2.8.4'
+}
+
+test {
+    useJUnitPlatform()
+}
